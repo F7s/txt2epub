@@ -1,103 +1,134 @@
-# 欢迎使用你的秒哒应用代码包
-秒哒应用链接
-    URL:https://www.miaoda.cn/projects/app-6c33pyy2zev5
+# txt2epub
 
-## 介绍
+将 TXT 文件转换为 EPUB 电子书的现代化 Web 应用。
 
-项目介绍
+![React](https://img.shields.io/badge/React-18-blue)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.7-blue)
+![Vite](https://img.shields.io/badge/Vite-5-646cff)
+![License](https://img.shields.io/badge/License-MIT-green)
 
-## 目录结构
+## ✨ 功能特性
 
-```
-├── README.md # 说明文档
-├── components.json # 组件库配置
-├── eslint.config.js # eslint 配置
-├── index.html # 入口文件
-├── package.json # 包管理
-├── postcss.config.js # postcss 配置
-├── public # 静态资源目录
-│   ├── favicon.png # 图标
-│   └── images # 图片资源
-├── src # 源码目录
-│   ├── App.tsx # 入口文件
-│   ├── components # 组件目录
-│   ├── context # 上下文目录
-│   ├── db # 数据库配置目录
-│   ├── hooks # 通用钩子函数目录
-│   ├── index.css # 全局样式
-│   ├── layout # 布局目录
-│   ├── lib # 工具库目录
-│   ├── main.tsx # 入口文件
-│   ├── routes.tsx # 路由配置
-│   ├── pages # 页面目录
-│   ├── services  # 数据库交互目录
-│   ├── types   # 类型定义目录
-├── tsconfig.app.json  # ts 前端配置文件
-├── tsconfig.json # ts 配置文件
-├── tsconfig.node.json # ts node端配置文件
-└── vite.config.ts # vite 配置文件
-```
+- 📄 **TXT 转 EPUB** - 支持将文本文件转换为符合 EPUB 3.3 标准的电子书
+- 🎨 **自定义排版** - 支持字体、字号、行距、对齐方式等排版设置
+- 📑 **智能章节识别** - 自动识别章节标题，支持自定义匹配规则
+- 🖼️ **封面支持** - 支持上传封面图片
+- 🌐 **多编码支持** - 自动检测文件编码，支持 GBK、GB2312、BIG5、UTF-8 等
+- 📊 **转换历史** - 记录转换历史，方便查看和重新下载
+- 🌓 **主题切换** - 支持明暗主题
+- ⚡ **性能优化** - 支持标准/多线程压缩策略，大文件处理更高效
 
-## 技术栈
-
-Vite、TypeScript、React、Supabase
-
-## 本地开发
-
-### 如何在本地编辑代码？
-
-您可以选择 [VSCode](https://code.visualstudio.com/Download) 或者您常用的任何 IDE 编辑器，唯一的要求是安装 Node.js 和 npm.
+## 🚀 快速开始
 
 ### 环境要求
 
-```
-# Node.js ≥ 20
-# npm ≥ 10
-例如：
-# node -v   # v20.18.3
-# npm -v    # 10.8.2
-```
+- Node.js ≥ 20
+- npm ≥ 10
 
-具体安装步骤如下：
+### 安装
 
-### 在 Windows 上安装 Node.js
+```bash
+# 克隆项目
+git clone <repository-url>
+cd txt2epub
 
-```
-# Step 1: 访问Node.js官网：https://nodejs.org/，点击下载后，会根据你的系统自动选择合适的版本（32位或64位）。
-# Step 2: 运行安装程序：下载完成后，双击运行安装程序。
-# Step 3: 完成安装：按照安装向导完成安装过程。
-# Step 4: 验证安装：在命令提示符（cmd）或IDE终端（terminal）中输入 node -v 和 npm -v 来检查 Node.js 和 npm 是否正确安装。
+# 安装依赖
+npm install
+
+# 启动开发服务器
+npm run dev
 ```
 
-### 在 macOS 上安装 Node.js
+访问 http://localhost:5173
 
-```
-# Step 1: 使用Homebrew安装（推荐方法）：打开终端。输入命令brew install node并回车。如果尚未安装Homebrew，需要先安装Homebrew，
-可以通过在终端中运行如下命令来安装：
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-或者使用官网安装程序：访问Node.js官网。下载macOS的.pkg安装包。打开下载的.pkg文件，按照提示完成安装。
-# Step 2: 验证安装：在命令提示符（cmd）或IDE终端（terminal）中输入 node -v 和 npm -v 来检查 Node.js 和 npm 是否正确安装。
-```
+## 📦 构建
 
-### 安装完后按照如下步骤操作：
+```bash
+# 构建生产版本
+npm run build
 
-```
-# Step 1: 下载代码包
-# Step 2: 解压代码包
-# Step 3: 用IDE打开代码包，进入代码目录
-# Step 4: IDE终端输入命令行，安装依赖：npm i
-# Step 5: IDE终端输入命令行，启动开发服务器：npm run dev -- --host 127.0.0.1
+# 预览构建结果
+npm run preview
 ```
 
-### 如何开发后端服务？
+## 🏗️ 项目结构
 
-配置环境变量，安装相关依赖
-如需使用数据库，请使用 supabase 官方版本或自行部署开源版本的 Supabase
+```
+txt2epub/
+├── src/
+│   ├── components/          # React 组件
+│   │   ├── converter/      # 转换功能组件
+│   │   ├── ui/             # 基础 UI 组件
+│   │   └── animations/     # 动画组件
+│   ├── pages/              # 页面组件
+│   ├── hooks/              # 自定义 Hooks
+│   ├── lib/                # 核心业务逻辑
+│   │   ├── epubGenerator.ts       # EPUB 生成器
+│   │   ├── chapterParser.ts       # 章节解析器
+│   │   ├── epubPackager.ts        # 打包器
+│   │   └── ...
+│   ├── types/              # TypeScript 类型定义
+│   └── main.tsx            # 应用入口
+├── public/                 # 静态资源
+├── dist/                   # 构建输出
+├── Dockerfile              # Docker 配置
+└── nginx.conf              # Nginx 配置
+```
 
-### 如何配置应用中的三方 API？
+## 🛠️ 技术栈
 
-具体三方 API 调用方法，请参考帮助文档：[源码导出](https://cloud.baidu.com/doc/MIAODA/s/Xmewgmsq7)，了解更多详细内容。
+| 类别 | 技术 |
+|------|------|
+| 框架 | React 18 + TypeScript |
+| 构建 | Vite 5 |
+| 路由 | React Router |
+| UI | Radix UI + Tailwind CSS |
+| 动画 | Framer Motion |
+| 表单 | React Hook Form + Zod |
+| ZIP | fflate |
 
-## 了解更多
+## 📝 使用说明
 
-您也可以查看帮助文档：[源码导出](https://cloud.baidu.com/doc/MIAODA/s/Xmewgmsq7)，了解更多详细内容。
+1. **上传文件** - 选择或拖拽 TXT 文件
+2. **设置元数据** - 填写书名、作者、封面等信息
+3. **配置排版** - 调整字体、字号、行距等
+4. **章节识别** - 配置章节匹配规则（可选）
+5. **转换** - 点击转换按钮生成 EPUB
+6. **下载** - 下载生成的电子书
+
+## 🐳 Docker 部署
+
+```bash
+# 构建镜像
+docker build -t txt2epub .
+
+# 运行容器
+docker run -d -p 80:80 txt2epub
+```
+
+## 🌐 静态部署
+
+将 `dist/` 目录部署到任意静态服务器（Nginx、Apache、Vercel、Netlify 等）。
+
+**Nginx 配置示例：**
+```nginx
+server {
+    listen 80;
+    root /path/to/dist;
+    index index.html;
+
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
+}
+```
+
+## 📄 许可证
+
+MIT License
+
+## 🙏 致谢
+
+- [EPUB 3.3 规范](https://www.w3.org/publishing/epub3/epub33.html)
+- [fflate](https://github.com/101arrowz/fflate) - 高性能 ZIP 压缩库
+- [Radix UI](https://www.radix-ui.com/) - 无障碍 UI 组件

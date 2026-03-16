@@ -1,15 +1,13 @@
 import { defineConfig } from "vite";
-// @ts-expect-error local plugin ships without TypeScript declarations
-import { miaodaDevPlugin } from "miaoda-sc-plugin";
 import react from "@vitejs/plugin-react";
 import svgr from "vite-plugin-svgr";
 import path from "path";
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: "./",
   plugins: [
     react(),
-    miaodaDevPlugin(),
     svgr({
       svgrOptions: {
         icon: true,
