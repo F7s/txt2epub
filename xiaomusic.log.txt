@@ -1,0 +1,131 @@
+[2025-11-09 11:44:13] [0.3.99] [INFO] xiaomusic.py:1484: The file conf/setting.json does not exist.
+[2025-11-09 11:44:13] [0.3.99] [INFO] xiaomusic.py:706: 协程时间循环未启动
+[2025-11-09 11:44:13] [0.3.99] [INFO] analytics.py:33: analytics init ok
+[2025-11-09 11:44:13] [0.3.99] [INFO] xiaomusic.py:127: Startup OK. Config(account='******', password='******', mi_did='', cookie='', verbose=False, music_path='music', temp_path='music/tmp', download_path='music/download', conf_path='conf', cache_dir='cache', hostname='192.168.2.5', port=8090, public_port=0, proxy=None, loudnorm=None, search_prefix='bilisearch:', ffmpeg_location='./ffmpeg/bin', get_duration_type='ffprobe', active_cmd='play,search_play,set_play_type_rnd,playlocal,search_playlocal,play_music_list,play_music_list_index,stop_after_minute,stop', exclude_dirs='@eaDir,tmp', ignore_tag_dirs='', music_path_depth=10, disable_httpauth=True, httpauth_username='******', httpauth_password='******', music_list_url='', music_list_json='', custom_play_list_json='', disable_download=False, key_word_dict={'下一首': 'play_next', '上一首': 'play_prev', '单曲循环': 'set_play_type_one', '全部循环': 'set_play_type_all', '随机播放': 'set_play_type_rnd', '单曲播放': 'set_play_type_sin', '顺序播放': 'set_play_type_seq', '分钟后关机': 'stop_after_minute', '刷新列表': 'gen_music_list', '加入收藏': 'add_to_favorites', '收藏歌曲': 'add_to_favorites', '取消收藏': 'del_from_favorites', '播放列表第': 'play_music_list_index', '删除歌曲': 'cmd_del_music', '播放本地歌曲': 'playlocal', '本地播放歌曲': 'playlocal', '本地搜索播放': 'search_playlocal', '播放歌曲': 'play', '放歌曲': 'play', '搜索播放': 'search_play', '关机': 'stop', '暂停': 'stop', '停止': 'stop', '停止播放': 'stop', '播放列表': 'play_music_list', '播放歌单': 'play_music_list', '测试自定义口令': 'exec#code1("hello")', '测试链接': 'exec#httpget("https://github.com/hanxi/xiaomusic")'}, key_match_order=['分钟后关机', '下一首', '上一首', '单曲循环', '全部循环', '随机播放', '单曲播放', '顺序播放', '关机', '刷新列表', '播放列表第', '播放列表', '加入收藏', '收藏歌曲', '取消收藏', '删除歌曲', '播放本地歌曲', '本地播放歌曲', '本地搜索播放', '播放歌曲', '放歌曲', '搜索播放', '暂停', '停止', '停止播放', '播放歌单', '测试自定义口令', '测试链接'], use_music_api=False, use_music_audio_id='1582971365183456177', use_music_id='355454500', log_file='xiaomusic.log.txt', fuzzy_match_cutoff=0.6, enable_fuzzy_match=True, stop_tts_msg='收到,再见', enable_config_example=False, keywords_playlocal='播放本地歌曲,本地播放歌曲', keywords_search_playlocal='本地搜索播放', keywords_play='播放歌曲,放歌曲', keywords_search_play='搜索播放', keywords_stop='关机,暂停,停止,停止播放', keywords_playlist='播放列表,播放歌单', user_key_word_dict={'测试自定义口令': 'exec#code1("hello")', '测试链接': 'exec#httpget("https://github.com/hanxi/xiaomusic")'}, enable_force_stop=False, devices={}, group_list='', remove_id3tag=False, convert_to_mp3=False, delay_sec=3, continue_play=False, enable_file_watch=False, file_watch_debounce=10, pull_ask_sec=1, enable_pull_ask=True, crontab_json='', enable_yt_dlp_cookies=False, enable_save_tag=False, enable_analytics=True, get_ask_by_mina=False, play_type_one_tts_msg='已经设置为单曲循环', play_type_all_tts_msg='已经设置为全部循环', play_type_rnd_tts_msg='已经设置为随机播放', play_type_sin_tts_msg='已经设置为单曲播放', play_type_seq_tts_msg='已经设置为顺序播放', recently_added_playlist_len=50, enable_cmd_del_music=False, search_music_count=100, web_music_proxy=False)
+[2025-11-09 11:44:13] [0.3.99] [INFO] httpserver.py:183: disable_httpauth:True
+[11:44:13] [0.3.99] [INFO] Started server process [9726]
+[11:44:13] [0.3.99] [INFO] Waiting for application startup.
+[2025-11-09 11:44:13] [0.3.99] [INFO] xiaomusic.py:928: run_forever start
+[2025-11-09 11:44:13] [0.3.99] [INFO] xiaomusic.py:704: 启动后台构建 tag cache
+[2025-11-09 11:44:13] [0.3.99] [INFO] xiaomusic.py:941: run_forever session:<aiohttp.client.ClientSession object at 0x1123659a0>
+[2025-11-09 11:44:13] [0.3.99] [INFO] xiaomusic.py:248: try login
+[11:44:13] [0.3.99] [INFO] Application startup complete.
+[2025-11-09 11:44:13] [0.3.99] [INFO] xiaomusic.py:678: 【cache/tag_cache.json】tag cache 已启用，但文件不存在
+[2025-11-09 11:44:13] [0.3.99] [INFO] xiaomusic.py:717: ignore_tag_absolute_dirs: []
+[2025-11-09 11:44:13] [0.3.99] [INFO] xiaomusic.py:690: 保存：tag cache 已保存到【cache/tag_cache.json】
+[2025-11-09 11:44:13] [0.3.99] [INFO] xiaomusic.py:745: tag 更新完成
+[2025-11-09 11:44:13] [0.3.99] [INFO] analytics.py:75: analytics run_with_cancel success
+[2025-11-09 11:44:13] [0.3.99] [INFO] analytics.py:75: analytics run_with_cancel success
+[2025-11-09 11:44:13] [0.3.99] [INFO] analytics.py:101: umami data: {'payload': {'hostname': '192.168.2.5', 'language': 'zh-CN', 'referrer': '', 'screen': '430x932', 'title': '后端统计', 'url': '/backend', 'website': '7bfb0890-4115-4260-8892-b391513e7e99', 'name': 'startup', 'data': {'version': '0.3.99', 'useragent': 'XiaoMusic/0.3.99 (Darwin Darwin Kernel Version 25.0.0: Mon Aug 25 21:17:51 PDT 2025; root:xnu-12377.1.9~3/RELEASE_ARM64_T6000; 64bit; arm64) Python/3.12.3'}}, 'type': 'event'}
+[2025-11-09 11:44:13] [0.3.99] [INFO] analytics.py:101: umami data: {'payload': {'hostname': '192.168.2.5', 'language': 'zh-CN', 'referrer': '', 'screen': '430x932', 'title': '后端统计', 'url': '/backend', 'website': '7bfb0890-4115-4260-8892-b391513e7e99', 'name': 'daily_active_user', 'data': {'version': '0.3.99', 'date': '2025-11-09', 'useragent': 'XiaoMusic/0.3.99 (Darwin Darwin Kernel Version 25.0.0: Mon Aug 25 21:17:51 PDT 2025; root:xnu-12377.1.9~3/RELEASE_ARM64_T6000; 64bit; arm64) Python/3.12.3'}}, 'type': 'event'}
+[11:44:13] [0.3.99] [INFO] Uvicorn running on http://['0.0.0.0', '::']:8090 (Press CTRL+C to quit)
+[2025-11-09 11:44:13] [0.3.99] [INFO] xiaomusic.py:289: 登录完成. 
+[2025-11-09 11:44:13] [0.3.99] [WARNING] xiaomusic.py:317: 可能登录失败. Error https://api2.mina.mi.com/admin/v2/device_list?master=0&requestId=app_ios_0aGHpTx5m4zjrZlFefIDbL6vo2WwOM: Login failed
+[2025-11-09 11:44:13] [0.3.99] [WARNING] xiaomusic.py:325: conf/.mi.token file not exist
+[2025-11-09 11:44:13] [0.3.99] [ERROR] analytics.py:111: Execption Cannot connect to host umami.hanxi.cc:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1000)')]
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/aiohttp/connector.py", line 1283, in _wrap_create_connection
+    return await self._loop.create_connection(*args, **kwargs, sock=sock)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py", line 1149, in create_connection
+    transport, protocol = await self._create_connection_transport(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py", line 1182, in _create_connection_transport
+    await waiter
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/sslproto.py", line 578, in _on_handshake_complete
+    raise handshake_exc
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/sslproto.py", line 560, in _do_handshake
+    self._sslobj.do_handshake()
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/ssl.py", line 917, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1000)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/xiaomusic/analytics.py", line 107, in post_to_umami
+    async with session.post(url, json=data, headers=headers) as response:
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/aiohttp/client.py", line 1510, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/aiohttp/client.py", line 779, in _request
+    resp = await handler(req)
+           ^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/aiohttp/client.py", line 734, in _connect_and_send_request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/aiohttp/connector.py", line 642, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/aiohttp/connector.py", line 1209, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/aiohttp/connector.py", line 1581, in _create_direct_connection
+    raise last_exc
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/aiohttp/connector.py", line 1550, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/aiohttp/connector.py", line 1285, in _wrap_create_connection
+    raise ClientConnectorCertificateError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorCertificateError: Cannot connect to host umami.hanxi.cc:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1000)')]
+[2025-11-09 11:44:13] [0.3.99] [ERROR] analytics.py:111: Execption Cannot connect to host umami.hanxi.cc:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1000)')]
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/aiohttp/connector.py", line 1283, in _wrap_create_connection
+    return await self._loop.create_connection(*args, **kwargs, sock=sock)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py", line 1149, in create_connection
+    transport, protocol = await self._create_connection_transport(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py", line 1182, in _create_connection_transport
+    await waiter
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/sslproto.py", line 578, in _on_handshake_complete
+    raise handshake_exc
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/sslproto.py", line 560, in _do_handshake
+    self._sslobj.do_handshake()
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/ssl.py", line 917, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1000)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/xiaomusic/analytics.py", line 107, in post_to_umami
+    async with session.post(url, json=data, headers=headers) as response:
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/aiohttp/client.py", line 1510, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/aiohttp/client.py", line 779, in _request
+    resp = await handler(req)
+           ^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/aiohttp/client.py", line 734, in _connect_and_send_request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/aiohttp/connector.py", line 642, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/aiohttp/connector.py", line 1209, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/aiohttp/connector.py", line 1581, in _create_direct_connection
+    raise last_exc
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/aiohttp/connector.py", line 1550, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/aiohttp/connector.py", line 1285, in _wrap_create_connection
+    raise ClientConnectorCertificateError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorCertificateError: Cannot connect to host umami.hanxi.cc:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1000)')]
+[2025-11-09 11:44:13] [0.3.99] [WARNING] analytics.py:70: google analytics run_with_cancel failed <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1000)>
+[2025-11-09 11:44:13] [0.3.99] [WARNING] analytics.py:70: google analytics run_with_cancel failed <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1000)>
+[11:44:58] [0.3.99] [INFO] ::1:63934 - "GET / HTTP/1.1" 200
+[11:44:58] [0.3.99] [INFO] ::1:63934 - "GET /static/manifest.json HTTP/1.1" 200
+[11:44:58] [0.3.99] [INFO] ::1:63940 - "GET /static/xiaoai.png HTTP/1.1" 200
+[11:44:58] [0.3.99] [INFO] ::1:63945 - "GET /static/sw.js HTTP/1.1" 200
+[11:44:58] [0.3.99] [INFO] ::1:63944 - "GET /static/weapp/qrcode.html HTTP/1.1" 200
+[11:44:58] [0.3.99] [INFO] ::1:63934 - "GET /static/index.html HTTP/1.1" 200
+[11:44:59] [0.3.99] [INFO] ::1:63962 - "GET /apple-touch-icon-precomposed.png HTTP/1.1" 404
+[11:44:59] [0.3.99] [INFO] ::1:63945 - "GET /static/favicon.ico HTTP/1.1" 200
+[11:44:59] [0.3.99] [INFO] ::1:63962 - "GET /apple-touch-icon.png HTTP/1.1" 404
+[11:46:21] [0.3.99] [INFO] Shutting down
+[11:46:21] [0.3.99] [INFO] Waiting for application shutdown.
+[11:46:21] [0.3.99] [INFO] Application shutdown complete.
+[11:46:21] [0.3.99] [INFO] Finished server process [9726]
