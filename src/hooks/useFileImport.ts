@@ -1,5 +1,4 @@
 import { useCallback } from 'react';
-import { toast } from 'sonner';
 import { BookInfoExtractor } from '@/lib/bookInfoExtractor';
 import { EpubGenerator } from '@/lib/epubGenerator';
 import { generateEpubIdentifier } from '@/lib/uuid';
@@ -82,8 +81,6 @@ export function useFileImport({
       appendDebugLog(`章节解析失败: ${error instanceof Error ? error.message : String(error)}`);
       setChapterCount(0);
     }
-
-    toast.success('文件上传成功');
   }, [
     appendDebugLog,
     metadata,

@@ -1,5 +1,4 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { toast } from 'sonner';
 import { EpubGenerator, ProgressCallback } from '@/lib/epubGenerator';
 import { EpubMetadataValidator } from '@/lib/metadataValidator';
 import { EpubErrorHandler } from '@/lib/errorHandler';
@@ -60,7 +59,6 @@ export function useConverterController({
     if (!selectedFile || !fileContent) {
       appendDebugLog('校验失败: 未上传文件');
       setActionMessage('请先上传TXT文件');
-      toast.error('请先上传TXT文件');
       return;
     }
 
@@ -69,16 +67,9 @@ export function useConverterController({
       appendDebugLog(`校验失败: ${validation.errors.join(', ')}`);
       const msg = '元数据验证失败: ' + validation.errors.join(', ');
       setActionMessage(msg);
-      toast.error(msg);
       return;
     }
     appendDebugLog('参数校验通过');
-
-    if (validation.warnings.length > 0) {
-      validation.warnings.forEach((warning) => {
-        toast.warning(warning);
-      });
-    }
 
     setIsConverting(true);
     setGeneratedBlob(null);
@@ -154,7 +145,6 @@ export function useConverterController({
       };
 
       setHistory(prev => [historyItem, ...prev.slice(0, 9)]);
-      toast.success('EPUB文件生成成功！');
       setActionMessage(null);
     } catch (error) {
       console.error('转换失败:', error);
@@ -182,7 +172,6 @@ export function useConverterController({
       };
 
       setHistory(prev => [historyItem, ...prev.slice(0, 9)]);
-      toast.error(epubError.toUserMessage());
     } finally {
       generator = null;
       setIsConverting(false);
@@ -202,7 +191,6 @@ export function useConverterController({
   const handleDownload = useCallback(() => {
     if (!generatedBlob || !metadata.title) {
       appendDebugLog('下载失败: 无可下载文件');
-      toast.error('没有可下载的文件');
       return;
     }
     appendDebugLog('开始下载文件');
@@ -226,12 +214,10 @@ export function useConverterController({
       document.body.appendChild(link);
       link.click();
 
-      toast.success('文件下载开始');
       appendDebugLog('下载已触发');
     } catch (error) {
       console.error('下载失败:', error);
       appendDebugLog(`下载异常: ${error instanceof Error ? error.message : String(error)}`);
-      toast.error('文件下载失败');
 
       if (url) {
         URL.revokeObjectURL(url);

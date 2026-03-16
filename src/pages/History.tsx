@@ -12,7 +12,6 @@ import {
   XCircle
 } from 'lucide-react';
 import React, { useState } from 'react';
-import { toast } from 'sonner';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -68,17 +67,14 @@ export default function History() {
 
   const clearHistory = () => {
     setHistory([]);
-    toast.success('历史记录已清空');
   };
 
   const deleteItem = (id: string) => {
     setHistory(prev => prev.filter(item => item.id !== id));
-    toast.success('记录已删除');
   };
 
   const downloadAgain = (item: ConversionHistory) => {
-    // 这里应该重新生成EPUB文件，但为了简化，我们只显示提示
-    toast.info('请重新转换文件以下载EPUB');
+    // 这里应该重新生成EPUB文件，但为了简化，我们不做任何操作
   };
 
   return (
