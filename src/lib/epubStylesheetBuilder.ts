@@ -70,17 +70,17 @@ p {
   text-align: ${settings.titleAlign};
   font-size: 1.5em;
   font-weight: bold;
-  margin: 2em 0;
-  break-before: page;
-  page-break-before: always;
+  margin: 2em 0 1em 0;
+  break-before: avoid;
+  page-break-before: avoid;
 }
 
 .volume-title {
   text-align: ${settings.titleAlign};
   font-size: 2em;
   font-weight: bold;
-  margin: 3em 0;
-  break-before: page;
+  margin: 3em 0 1.5em 0;
+  break-before: always;
   page-break-before: always;
   color: #333;
 }

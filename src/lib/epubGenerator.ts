@@ -99,7 +99,7 @@ export class EpubGenerator {
   private generateNavXhtml(): void {
     this.fileEntries.push({
       name: 'OEBPS/nav.xhtml',
-      content: buildNavXhtml(this.getAllChapters()),
+      content: buildNavXhtml(this.getAllChapters(), this.metadata),
       compress: true
     });
   }

@@ -42,7 +42,7 @@ describe('epub manifest builders', () => {
 
   it('builds navigation documents from chapter list', () => {
     const toc = buildTocNcx(metadata, chapters);
-    const nav = buildNavXhtml(chapters);
+    const nav = buildNavXhtml(chapters, metadata);
 
     expect(toc).toContain('navPoint-chapter_1');
     expect(toc).toContain('第2章 继续');

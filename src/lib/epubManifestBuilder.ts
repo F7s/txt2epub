@@ -87,13 +87,25 @@ ${coverSpineItem}${spineItems}
 }
 
 export function buildTocNcx(metadata: EpubMetadata, chapters: ChapterInfo[]): string {
+  // 计算起始 playOrder，如果有封面页则从 2 开始
+  const startOrder = metadata.cover ? 2 : 1;
+  
   const navPoints = chapters.map((chapter, index) => `
-    <navPoint id="navPoint-${chapter.id}" playOrder="${index + 1}">
+    <navPoint id="navPoint-${chapter.id}" playOrder="${index + startOrder}">
       <navLabel>
         <text>${escapeXml(chapter.title)}</text>
       </navLabel>
       <content src="Text/${chapter.id}.xhtml"/>
     </navPoint>`).join('');
+
+  // 如果有封面页，添加封面导航点
+  const coverNavPoint = metadata.cover ? `
+    <navPoint id="navPoint-cover" playOrder="1">
+      <navLabel>
+        <text>封面</text>
+      </navLabel>
+      <content src="Text/cover.xhtml"/>
+    </navPoint>` : '';
 
   return `<?xml version="1.0" encoding="UTF-8"?>
 <ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1">
@@ -106,13 +118,17 @@ export function buildTocNcx(metadata: EpubMetadata, chapters: ChapterInfo[]): st
   <docTitle>
     <text>${escapeXml(metadata.title)}</text>
   </docTitle>
-  <navMap>${navPoints}
+  <navMap>${coverNavPoint}${navPoints}
   </navMap>
 </ncx>`;
 }
 
-export function buildNavXhtml(chapters: ChapterInfo[]): string {
-  const navItems = chapters.map((chapter) =>
+export function buildNavXhtml(chapters: ChapterInfo[], metadata: EpubMetadata): string {
+  // 如果有封面页，添加封面导航项
+  const coverNavItem = metadata.cover ? 
+    `        <li><a href="Text/cover.xhtml">封面</a></li>\n` : '';
+  
+  const chapterNavItems = chapters.map((chapter) =>
     `        <li><a href="Text/${chapter.id}.xhtml">${escapeXml(chapter.title)}</a></li>`
   ).join('\n');
 
@@ -127,7 +143,7 @@ export function buildNavXhtml(chapters: ChapterInfo[]): string {
   <nav epub:type="toc" id="toc">
     <h1>目录</h1>
     <ol>
-${navItems}
+${coverNavItem}${chapterNavItems}
     </ol>
   </nav>
 </body>
