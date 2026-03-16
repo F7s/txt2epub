@@ -1,5 +1,6 @@
-import { AlertCircle, Zap } from 'lucide-react';
+import { AlertCircle, Zap, X } from 'lucide-react';
 import { Alert, AlertDescription } from '@/components/ui/alert';
+import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import FileUpload from '@/components/converter/FileUpload';
@@ -101,12 +102,34 @@ export default function ConverterWorkspace(props: ConverterWorkspaceProps) {
 
       <div className="grid grid-cols-1 xl:grid-cols-12 gap-6">
         <section className="space-y-6 xl:col-span-8">
-          <FileUpload
-            onFileSelect={onFileSelect}
-            selectedFile={selectedFile}
-            onClear={onClearFile}
-            disabled={isConverting}
-          />
+          {!selectedFile ? (
+            <FileUpload
+              onFileSelect={onFileSelect}
+              selectedFile={selectedFile}
+              onClear={onClearFile}
+              disabled={isConverting}
+            />
+          ) : (
+            <div className="space-y-4">
+              <div className="flex items-center justify-between">
+                <div>
+                  <h3 className="text-lg font-semibold">已选择文件</h3>
+                  <p className="text-sm text-muted-foreground">
+                    {selectedFile.name} ({formatFileSize(selectedFile.size)})
+                  </p>
+                </div>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={onClearFile}
+                  disabled={isConverting}
+                >
+                  <X className="h-4 w-4 mr-2" />
+                  更换文件
+                </Button>
+              </div>
+            </div>
+          )}
 
           <FileSummary
             selectedFile={selectedFile}
