@@ -9,6 +9,9 @@ export default function Header() {
   const location = useLocation();
   const navigation = routes.filter(route => route.visible !== false);
 
+  // 在 HashRouter 中，路径在 hash 中
+  const currentPath = location.hash ? location.hash.replace('#', '') : location.pathname;
+
   const getIcon = (path: string) => {
     switch (path) {
       case '/':
@@ -40,7 +43,7 @@ export default function Header() {
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-1">
           {navigation.map((route) => {
-            const isActive = location.pathname === route.path;
+            const isActive = currentPath === route.path;
             
             return (
               <Link
@@ -84,20 +87,23 @@ export default function Header() {
               <span className="text-lg font-serif font-bold text-primary">TXT2EPUB</span>
             </div>
             <nav className="flex flex-col space-y-2">
-              {navigation.map((route) => (
-                <Link
-                  key={route.path}
-                  to={route.path}
-                  className={`flex items-center space-x-3 text-sm font-serif font-medium transition-colors p-3 rounded-sm ${
-                    location.pathname === route.path
-                      ? 'text-primary bg-primary/5 border-l-2 border-primary'
-                      : 'text-muted-foreground hover:bg-muted hover:text-primary'
-                  }`}
-                >
-                  {getIcon(route.path)}
-                  <span>{route.name}</span>
-                </Link>
-              ))}
+              {navigation.map((route) => {
+                const isActive = currentPath === route.path;
+                return (
+                  <Link
+                    key={route.path}
+                    to={route.path}
+                    className={`flex items-center space-x-3 text-sm font-serif font-medium transition-colors p-3 rounded-sm ${
+                      isActive
+                        ? 'text-primary bg-primary/5 border-l-2 border-primary'
+                        : 'text-muted-foreground hover:bg-muted hover:text-primary'
+                    }`}
+                  >
+                    {getIcon(route.path)}
+                    <span>{route.name}</span>
+                  </Link>
+                );
+              })}
             </nav>
           </SheetContent>
         </Sheet>
