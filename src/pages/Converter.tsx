@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import EmptyState from '@/components/converter/EmptyState';
 import ConverterWorkspace from '@/components/converter/ConverterWorkspace';
@@ -141,6 +141,29 @@ export default function Converter() {
       : conversionProgress < 100
       ? '打包EPUB'
       : '完成';
+
+  // 在移动端，当显示文件上传界面时禁用滚动
+  useEffect(() => {
+    const isMobile = window.innerWidth < 768;
+    if (isMobile && !hasFile) {
+      // 禁用滚动
+      document.body.style.overflow = 'hidden';
+      document.body.style.position = 'fixed';
+      document.body.style.width = '100%';
+    } else {
+      // 恢复滚动
+      document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.width = '';
+    }
+
+    // 清理函数
+    return () => {
+      document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.width = '';
+    };
+  }, [hasFile]);
 
   return (
     <div className="container py-6 lg:py-8 pb-24 md:pb-8">
