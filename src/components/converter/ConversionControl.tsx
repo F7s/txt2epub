@@ -114,7 +114,7 @@ export default function ConversionControl(props: ConversionControlProps) {
   if (mobile) {
     return (
       <div
-        className="fixed bottom-0 left-0 right-0 border-t bg-background/95 backdrop-blur-sm p-3 md:hidden z-40"
+        className="fixed bottom-0 left-0 right-0 border-t bg-background/95 backdrop-blur-sm p-3 md:hidden z-50"
         style={{ paddingBottom: 'max(0.75rem, env(safe-area-inset-bottom))' }}
       >
         <div className="container space-y-2">
